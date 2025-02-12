@@ -1,0 +1,111 @@
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Arquivos de build/produção
+/build/
+/dist/
+/out/
+
+# Arquivos de cache
+.cache/
+.npm/
+.yarn/
+
+# Arquivos de IDE/editores
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de teste de cobertura
+/coverage/
+
+# Arquivos temporários
+/tmp/
+/temp/
+
+# Arquivos de sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Arquivos de configuração local
+*.local
+
+# Arquivos de backup
+*.bak
+*.backup
+*~
+
+# Arquivos compilados Delphi
+*.dcu
+*.exe
+*.dll
+*.bpl
+*.bpi
+*.dcp
+*.so
+*.apk
+*.drc
+*.map
+*.dres
+*.rsm
+*.tds
+*.dcu
+*.lib
+*.a
+*.o
+*.ocx
+
+# Arquivos de backup Delphi
+*.~*
+*.local
+*.identcache
+*.projdata
+*.tvsconfig
+*.dsk
+*.dproj.local
+*.groupproj.local
+
+# Diretórios Delphi
+__history/
+__recovery/
+Win32/
+Win64/
+Android/
+iOSDevice/
+iOSDevice32/
+iOSDevice64/
+iOSSimulator/
+Linux64/
+
+# Arquivos de IDE
+*.local
+*.identcache
+*.projdata
+*.tvsconfig
+*.dsk
+
+# Arquivos de Debug
+*.rsm
+*.map
+*.tds
+
+# Outros
+/backup/
+/lib/
+/bin/ 

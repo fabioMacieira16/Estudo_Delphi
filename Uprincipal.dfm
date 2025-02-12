@@ -41,6 +41,7 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = '+'
+    Enabled = False
     TabOrder = 0
     OnClick = btnSomaClick
   end
@@ -50,6 +51,7 @@ object Form1: TForm1
     Width = 369
     Height = 23
     TabOrder = 1
+    OnChange = txtNum1Change
   end
   object txtNum2: TEdit
     Left = 24
@@ -57,6 +59,7 @@ object Form1: TForm1
     Width = 369
     Height = 23
     TabOrder = 2
+    OnChange = txtNum1Change
   end
   object btnSubitracao: TButton
     Left = 105
@@ -64,23 +67,26 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = '-'
+    Enabled = False
     TabOrder = 3
     OnClick = btnSubitracaoClick
   end
-  object bntMultiplicacao: TButton
+  object btnMultiplicar: TButton
     Left = 186
     Top = 216
     Width = 75
     Height = 25
     Caption = '*'
+    Enabled = False
     TabOrder = 4
-    OnClick = bntMultiplicacaoClick
+    OnClick = btnMultiplicarClick
   end
   object txtResultado: TEdit
     Left = 24
     Top = 293
     Width = 369
     Height = 23
+    ReadOnly = True
     TabOrder = 5
   end
   object btnDivisao: TButton
@@ -89,6 +95,7 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = '/'
+    Enabled = False
     TabOrder = 6
     OnClick = btnDivisaoClick
   end
