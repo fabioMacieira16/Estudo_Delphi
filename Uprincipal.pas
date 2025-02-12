@@ -103,11 +103,14 @@ type
     procedure btnMultiplicarClick(Sender: TObject);
     procedure btnDivisaoClick(Sender: TObject);
     procedure txtNum1Change(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     procedure calcularResultado(operacao: String);
     function validarCampos(): Boolean;
     procedure habilitarBotoes(habilitado: Boolean);
+    procedure registrarLog(acao: string);
   public
     { Public declarations }
   end;
@@ -138,6 +141,18 @@ begin
   txtResultado.Text := FloatToStr(resultado);
 end;
 
+procedure TForm1.FormCreate(Sender: TObject);
+begin 
+   registrarLog('-------------------------------');
+   registrarLog('Aplicação iniciada')
+end;
+
+procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ registrarLog('-------------------------------');
+   registrarLog('Aplicação encerrada')
+end;
+
 
 procedure TForm1.habilitarBotoes(habilitado: Boolean);
 begin
@@ -146,6 +161,25 @@ begin
     btnDivisao.Enabled := habilitado;
     btnMultiplicar.Enabled := habilitado;
  
+end;
+
+procedure TForm1.registrarLog(acao: string);
+var 
+  arquivo: TextFile;
+begin
+  try
+    AssignFile(arquivo, 'Logs.txt');
+
+    if FileExists('logs.txt') then
+       Append(arquivo)
+    else
+      Rewrite(arquivo);
+
+      writeln(arquivo,'[' + DateTimeToStr(now())+'] - '  + acao);
+      
+  finally
+      CloseFile(arquivo);
+  end;
 end;
 
 procedure TForm1.txtNum1Change(Sender: TObject);
@@ -178,7 +212,13 @@ end;
 procedure TForm1.btnSomaClick(Sender: TObject);
 begin
     if validarCampos then
-       calcularResultado('somar')
+      begin
+         calcularResultado('somar')
+         //registrarLog('Soma, num1=' + txtNum1.Text + ', num2=' + txtNum2.Text + ', resultado=' + txtResultado.Text);
+          registrarLog('Soma, num1=' + txtNum1.Text + ', num2=' + txtNum2.Text + ', resultado=' + txtResultado.Text);
+
+
+      end;
 end;
 
 procedure TForm1.btnSubitracaoClick(Sender: TObject);
